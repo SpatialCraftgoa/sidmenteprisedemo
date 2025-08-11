@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/popup.css">
+    <link rel="stylesheet" href="./styles/video360.css">
+    <link rel="stylesheet" href="./styles/sidebar.css">
+    <link rel="stylesheet" href="./styles/credit.css">
+    <link rel="stylesheet" href="./styles/measure.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.86/Build/Cesium/Cesium.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link id="x-icon" rel="icon" href="SpatialCraft-Color-Logomark.png" type="image/x-icon" />
+   
+
+    <script>
+
+        //defining the dynamic variables
+      const projectname="Demo"
+      const imglocation=""
+      const companylogo="/SpatialCraft-Color-Logomark.png"
+      const centerpoint="392059,1699376"
+      const youtubelink=""
+      const threesixtylink="" 
+
+      // setting the variables tot he markup
+      $(document).ready(function() {
+            $("#Geosensitive").text(projectname);
+            $("#projectname").text(projectname);
+            $("#sidebar-Title").text(projectname);
+            
+          
+            $("#youtube_vid").attr("src", youtubelink);
+            $("#threesixty_image").attr("src", threesixtylink);
+
+        });
+      
+  
+
+    </script>
+</head>
+<body>
+  <div id="map">
+    <!--Powered by Spatialcraft-->
+    <div id="poweredBy">Powered by <a href="https://spatialcraft.in/" target="_blank">SpatialCraft</a></div>
+</div>
+
+<!-- Measurement Form (Initially Hidden) -->
+<div id="measureFormUnique456" class="hidden">
+  <form id="measureUnique789">
+    <label for="typeUnique101">Measurement type &nbsp;</label>
+    <select id="typeUnique101">
+      <option value="length">Length (LineString)</option>
+      <option value="area">Area (Polygon)</option>
+    </select>
+    <button type="button" id="resetBtnUnique202">Reset</button>
+    <button type="button" id="closeBtnUnique303">❌</button>
+  </form>
+</div>
+
+
+<!--Sidebar-->
+<div id="sidebar">
+<div class="Sidebar-content">
+<br>
+<div id="sidebar-Title"></div>
+<p id="sidebar-info">
+
+<br>
+  <h3><br>
+   
+  </h3>
+    <table id="highlights-table" style="color: white;">
+      <tr>
+      
+      </tr>
+      <tr>
+      
+      </tr>
+      <tr>
+        
+      </tr>
+      <tr>
+     
+      </tr>
+      <tr>
+        
+      </tr>
+      <tr>
+        
+      </tr>
+    </table>
+ 
+</p>
+<br>
+
+  <img class="sidebar_photo"  src="" alt=""><br>
+  <img  class="sidebar_photo"  src="" alt=""><br>
+  <img  class="sidebar_photo"  src="" alt=""><br>
+
+
+
+<div style="display: none;color: green;font-size: 10px;" id="poweredBymob">Powered by <a href="https://spatialcraft.in/" target="_blank">Spatialcraft</a></div>
+</div>
+</div>
+
+</div>
+<div id="dragButton">
+  <img src="images/arrow-circle-right-svgrepo-com (3).svg"  alt="" id="arrow">
+</div>
+
+
+<!--Layer list-->
+    <div id="draggable">
+      <div id="draggable-header">
+        <div id="draggable-title">Layers</div>
+        <a href="#" id="draggable-closer" class="ol-popup-closer2"></a>
+      </div>
+      <div id="draggable-content"></div>
+    </div>
+
+
+
+
+
+
+<div class="tooltip" id="homeTooltip">
+    
+   <div class="nav">
+  <div class="text-container">
+    <p id="projectname">PROJECT NAME</p>
+  </div>
+
+  <div class="logo">
+    <img id="companylogo" src="SpatialCraft-Color-Logomark.png" alt="Company Logo">
+  </div>
+</div>
+
+<!--Mobile toggle button-->
+
+       <button id="mobile-feature-toggle" class="mobile-toggle-btn">
+        <i class="fas fa-plus"></i>
+      </button>
+    <div class="feature-button">
+
+   
+      <!-- 3D Mode -->
+  <button id="map-3d" class="feature-btn" data-label="3D View">
+    <div class="cube-3d">3D</div>
+  </button>
+
+  <!--youtube-->
+    <button id="youtube-icon" class="youtube feature-btn" data-label="Watch Video">
+      <i class="fab fa-youtube icon-youtube"></i>
+    </button>
+
+      <!-- 360 Viewer -->
+  <button id="button-360" class="button-360 feature-btn" data-label="360 View">
+    <span class="text-icon">360</span>
+  </button>
+
+      <!-- Location -->
+  <button id="my-location" class="my-location feature-btn" data-label="My Location">
+    <i class="fas fa-location-crosshairs icon-location"></i>
+  </button>
+
+      <!-- Layer Toggle -->
+  <button id="map-switcher" class="maps feature-btn" data-label="Base Map">
+    <i class="fas fa-layer-group icon-layer"></i>
+  </button>
+
+  <!-- Measurement Tool -->
+<button id="measure-tool" class="feature-btn measure-btn" data-label="Measure Tool">
+  <i class="fas fa-ruler icon-measure"></i>
+</button>
+
+  
+    </div>
+
+
+</div>
+
+<div id="centeredContainer">
+    <div id="youtubevideodiv">
+      <iframe
+        id="youtube_vid"
+        src=""
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; 
+           gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <div class="ol-popup-closer" id="closerBtn"></div>
+    </div>
+  </div>
+
+  
+  
+  <div id="centeredContainer2">
+    <div id="threesixty_div">
+      <iframe  id="threesixty_image" src="" width="600" height="450" style="border:0;" allowfullscreen="" 
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="ol-popup-closer" id="closerBtn2"></div>
+    </div>
+  </div>
+
+    <!-- Popup div -->
+    <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content">
+          <div id="info"></div>
+          <div id="no-feature"></div>
+        </div>
+      </div>
+
+
+<!--Scripts-->
+
+<script>
+  const toggleBtn = document.getElementById('mobile-feature-toggle');
+  const featurePanel = document.querySelector('.feature-button');
+
+  toggleBtn.addEventListener('click', () => {
+    featurePanel.classList.toggle('open');
+    toggleBtn.classList.toggle('active');
+
+    // Toggle icon between plus and close
+    const icon = toggleBtn.querySelector('i');
+    icon.className = featurePanel.classList.contains('open') ? 'fas fa-times' : 'fas fa-plus';
+  });
+</script>
+
+<script type="module" src="./scripts/Map.js"></script>
+<script type="module" src="./scripts/youtubevid.js"></script>
+<script type="module" src="./scripts/image360.js"></script>
+<script type="module" src="./scripts/Layers.js"></script>
+<script type="module" src="./scripts/autozoom.js"></script>
+<script type="module" src="./scripts/customFunctions.js"></script>
+<script type="module" src="./scripts/layerswitch.js"></script>
+<script type="module" src="./scripts/geolocation.js"></script>
+<script type="module" src="./scripts/identify.js"></script>
+<script type="module" src="./scripts/3d.js"></script>
+<script type="module" src="./scripts/measure.js"></script>
+<script type="module" src="./scripts/sidebar.js"></script>
+<!--<script type="module" src="./scripts/getgraphicinfo.js"></script>-->
+
+</body>
+</html>
+
+
