@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embed Zoho Form with Dynamic Parameters</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe 
+        id="zohoForm"
+        aria-label="Plots"
+        frameborder="0">
+    </iframe>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParams() {
+            let params = {};
+            let searchParams = new URLSearchParams(window.location.search);
+            for (let param of searchParams) {
+                params[param[0]] = param[1];
+            }
+            return params;
+        }
+
+        // Construct the Zoho Form URL with parameters
+        function constructFormUrl(params) {
+            let baseUrl = 'https://forms.zohopublic.in/contact130/form/Plots/formperma/Leqvpz4nW-jpyWUevpx63wDLXhIEgZO5JaWX5vtdce0';
+            let url = new URL(baseUrl);
+            url.searchParams.append('survey', params.survey || '');
+            url.searchParams.append('project', params.project || '');
+            return url.toString();
+        }
+
+        // Get URL parameters
+        let params = getUrlParams();
+
+        // Construct the form URL
+        let formUrl = constructFormUrl(params);
+
+        // Set the src attribute of the iframe
+        document.getElementById('zohoForm').src = formUrl;
+    </script>
+</body>
+</html>

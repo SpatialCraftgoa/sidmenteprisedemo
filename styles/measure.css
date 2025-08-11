@@ -1,0 +1,110 @@
+#measureFormUnique456 {
+  position: fixed;
+  right: 20px;
+  top: 73%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  padding: 12px 16px;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+}
+
+#measureFormUnique456 form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#measureFormUnique456 label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+#measureFormUnique456 select,
+#measureFormUnique456 button {
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#resetBtnUnique202 {
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+#resetBtnUnique202:hover {
+  background-color: #eaeaea;
+}
+
+#closeBtnUnique303 {
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#closeBtnUnique303:hover {
+    background-color: #e0e0e0; /* darker gray for contrast */
+}
+.hidden {
+  display: none !important;
+}
+
+
+/* Responsive Adjustment for Mobile */
+@media (max-width: 600px) {
+  #measureFormUnique456 {
+    right: 8px;
+    left: auto;
+    top: 73%;
+    padding: 6px 8px;
+    min-width: unset;
+    width: auto;
+    max-width: 100%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap; /* fallback if space is tight */
+  }
+
+  #measureFormUnique456 form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+  }
+
+  #measureFormUnique456 label {
+    font-size: 10px;
+    margin: 0;
+  }
+
+  #measureFormUnique456 select,
+  #measureFormUnique456 button {
+    padding: 2px 4px;
+    font-size: 10px;
+    border-radius: 4px;
+    width: auto;
+    min-width: auto;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+
+  #closeBtnUnique303 {
+    font-size: 10px;
+    padding: 2px 4px;
+    background-color: transparent;
+    color: red;
+  }
+}

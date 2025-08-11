@@ -1,0 +1,40 @@
+#centeredContainer,
+#centeredContainer2 {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  width: 50%;
+  display: none;
+  background-color: #fff;
+}
+
+
+#youtubevideodiv,
+#threesixty_div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#youtube_vid,
+#threesixty_image {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    #centeredContainer,
+  #centeredContainer2 {
+    position: absolute;
+    top: 60%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 60%;
+    display: none;
+    background-color: #fff;
+  }}

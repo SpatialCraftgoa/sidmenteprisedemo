@@ -1,0 +1,248 @@
+#sidebar {
+  position: fixed;
+  top: 80px; /* Start below the navbar */
+  left: -30%; /* Hidden by default */
+  width: 30%;
+  height: calc(100% - 80px); /* Fill space below navbar */
+ background: rgba(37, 47, 37, 0.695);
+  backdrop-filter: blur(12px); /* Glass blur */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  border-right: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  transition: left 0.5s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+#sidebar-Title {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: default;
+}
+
+
+#dragButton {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 100px;
+     background: rgba(37, 47, 37, 0.695);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: left 0.5s ease; /* Smooth dragging */
+    border-radius: 0px 8px 8px 0px;
+}
+
+#arrow{
+    height: auto;
+    width: 60px;
+    align-items: center;
+    position: relative;
+    top: 20%;
+}
+.Sidebar-content {
+  height: 100%;
+  padding: 24px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: justify;
+  letter-spacing: -0.01cap;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: #f0f0f0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
+}
+
+.Sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.Sidebar-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+
+#highlights-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#highlights-table th, #highlights-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#highlights-table th {
+  background-color: rgba(255, 255, 255, 0.08);
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+#highlights-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  transition: background-color 0.3s ease;
+}
+
+#highlights-table td:last-child {
+  text-align: right;
+}
+
+/* Responsive font and padding */
+@media (max-width: 768px) {
+  #highlights-table th, #highlights-table td {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+
+#sidebar-closer {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    z-index: 10; /* Ensure it stays on top */
+    cursor: pointer;
+}
+
+
+  
+.sidebar_photo {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  margin: 16px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar_photo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+
+#sidebar-info{
+    color: aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    line-height: 1.6;
+}
+#highlights-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  #highlights-table th, #highlights-table td {
+    padding: 8px 20px; /* Adds gap between columns */
+    text-align: left;
+  }
+
+  #highlights-table th {
+    font-weight: bold;
+  }
+
+
+@media only screen and (max-width: 768px) {
+  /* Sidebar layout */
+  #sidebar {
+    top: 60px;
+    left: -70%;
+    width: 70%;
+    height: calc(100% - 60px);
+  }
+
+  #sidebar-Title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .Sidebar-content {
+    padding: 16px;
+    margin-bottom: 100px;
+    font-size: 14px;
+    height: auto;
+  }
+
+  #sidebar-info {
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+ 
+
+  /* Sidebar Image */
+  .sidebar_photo {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    margin: 12px 0;
+  }
+
+  #sidebar-closer {
+    top: 20px;
+    right: 10px;
+    font-size: 18px;
+  }
+
+  /* Table Styling */
+  #highlights-table {
+    margin-top: 10px;
+    font-size: 13px;
+    box-shadow: none;
+  }
+
+  #highlights-table th,
+  #highlights-table td {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  #highlights-table td:last-child {
+    text-align: left;
+  }
+
+ #dragButton {
+    width: 50px;
+    height: 60px;
+}
+
+  #arrow{
+    height: auto;
+    width: 40px;
+    top: 15%;
+    
+}
+}
